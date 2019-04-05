@@ -1,0 +1,73 @@
+{% extends 'template.html' %}
+{% block content %}
+  <div class="card-header">Web Crawler</div>
+  <div class="card-body">
+    <form>
+      <div class="form-group">
+        <input
+          type="text"
+          class="form-control"
+          name="q"
+          placeholder="Press enter to search"
+          {% if keyword %}
+          value="{{ keyword }}"
+          {% endif %}
+          required
+        />
+      </div>
+    </form>
+
+    <div class="list-group">
+      {% for article in articles %}
+        <a
+          class="list-group-item list-group-item-action"
+          href="{{ article[0] }}"
+          target="_blank"
+        >
+          {% if keyword %}
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-1">{{ article[1] }}</h5>
+            </div>
+            <p class="mb-1">{{ article[2] }}</p>
+          {% else %}
+            <div class="d-flex justify-content-between">
+              <h5 class="mb-1">{{ article[1] }}</h5>
+              <span>{{ article[2] }}</span>
+            </div>
+            <p class="mb-1">{{ article[3] }}</p>
+          {% endif %}
+        </a>
+      {% endfor %}
+    </div>
+
+    {% if page and page[1] > 1 %}
+      <nav>
+        <ul class="pagination">
+          {% if page[0] != 1 %}
+            <li class="page-item">
+              <a class="page-link" href="/crawler?p={{ page[0] - 1 }}"><</a>
+            </li>
+          {% endif %}
+          {% for _ in range(0, page[1]) %}
+            {% if loop.index == page[0] %}
+              <li class="page-item active">
+                <span class="page-link">{{ loop.index }}</span>
+              </li>
+            {% else %}
+              <li class="page-item">
+                <a class="page-link" href="/crawler?p={{ loop.index }}"
+                  >{{ loop.index }}</a
+                >
+              </li>
+            {% endif %}
+          {% endfor %}
+          {% if page[0] != page[1] %}
+            <li class="page-item">
+              <a class="page-link" href="/crawler?p={{ page[0] + 1 }}">></a>
+            </li>
+          {% endif %}
+        </ul>
+      </nav>
+    {% endif %}
+  </div>
+{% endblock %}

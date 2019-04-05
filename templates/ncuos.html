@@ -1,0 +1,184 @@
+{% extends 'template.html' %}
+{% block content %}
+  <style>
+    /* Override Bootstrap default */
+    .table td {
+      border: 0;
+    }
+
+    td:first-child {
+      font-weight: 700;
+      text-align: right;
+      width: 10vw;
+    }
+
+    img {
+      border-radius: 0.25rem;
+      max-width: 100%;
+    }
+  </style>
+
+  <div id="form">
+    <div class="card-header">Login</div>
+    <div class="card-body">
+      <div class="alert alert-danger" hidden></div>
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="no"
+            placeholder="Student No."
+            required
+          />
+        </div>
+        <div class="form-group">
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            placeholder="Password"
+            required
+          />
+        </div>
+        <button id="login" type="button" class="btn btn-primary">Login</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="info" hidden>
+    <div class="card-header">Basic Info</div>
+    <div class="card-body">
+      <table class="table">
+        <tr>
+          <td>Photo</td>
+          <td>
+            <img
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              alt="Photo"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>Full Name</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Ethnicity</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Date of Birth (Y/M)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>ID No.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Student No.</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Native Place</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Student Category</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Nationality</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Educating Mode</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Political Status</td>
+          <td></td>
+        </tr>
+      </table>
+
+      <button id="logout" type="button" class="btn btn-primary">Logout</button>
+    </div>
+  </div>
+
+  <script type="module">
+    import ky from 'https://cdn.jsdelivr.net/npm/ky/index.js'
+
+    const $ = s => document.querySelector(s)
+    const msg = txt => {
+      if ($('.alert').hidden) $('.alert').hidden = false
+      $('.alert').textContent = txt
+    }
+
+    $('#login').addEventListener('click', () => {
+      if (!$('#no').value) msg('Please enter your Student No.')
+      else if (!$('#password').value) msg('Please enter your password')
+      else
+        (async () => {
+          const res = await ky
+            .post('https://os.ncuos.com/api/user/token', {
+              json: {
+                username: $('#no').value,
+                password: $('#password').value
+              }
+            })
+            .json()
+
+          if (res.status === 1) {
+            sessionStorage.token = res.token
+            location.reload()
+          } else msg(res.message)
+        })()
+    })
+    $('#logout').addEventListener('click', () => {
+      delete sessionStorage.token
+      location.reload()
+    })
+
+    if (sessionStorage.token)
+      (async () => {
+        $('#form').hidden = true
+        $('#info').hidden = false
+
+        const photo = await ky
+          .get('https://os.ncuos.com/api/user/profile/index', {
+            headers: {
+              Authorization: 'passport ' + sessionStorage.token
+            }
+          })
+          .json()
+        $('img').src = photo.head_pic_url
+
+        const res = (await ky
+          .get('https://os.ncuos.com/api/user/profile/basic', {
+            headers: {
+              Authorization: 'passport ' + sessionStorage.token
+            }
+          })
+          .json()).base_info
+        const info = [
+          res.xm,
+          res.xb.mc,
+          res.mz.mc,
+          res.csrq.slice(0, 6),
+          res.sfzh,
+          res.xh,
+          res.jg.mc,
+          res.xslb.mc,
+          res.gb.mc,
+          res.pyfs.mc,
+          res.zzmm.mc
+        ]
+        for (let i = 2; i <= 12; i++)
+          $(`tr:nth-of-type(${i}) td:last-child`).textContent = info[i - 2]
+      })()
+  </script>
+{% endblock %}
