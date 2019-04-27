@@ -1,6 +1,9 @@
 # NCUHome 2018 Exam
 
-Answer to [NCUHome 2018 Exam](https://github.com/lenconda/2018exam) (Updated).
+![Maintenance](https://img.shields.io/maintenance/no/2018.svg?style=for-the-badge)
+[![License](https://img.shields.io/github/license/kidonng/ncuhome-2018-exam.svg?style=for-the-badge)](LICENSE)
 
-- Setup `pip install flask bs4`
+[Exam](exam)
+
+- Setup `pip install -r requirements.txt`
 - Run `flask run`
