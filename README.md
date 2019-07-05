@@ -4,5 +4,5 @@
 
 [Archive](../../tree/archive)
 
-- Setup `pip install flask bs4`
+- Setup `pip install -r requirements.txt`
 - Run `flask run`
