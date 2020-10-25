@@ -1,9 +1,7 @@
-# NCUHome 2018 Exam
+# NCUHOME Tasks
 
-![Maintenance](https://img.shields.io/maintenance/no/2018.svg?style=for-the-badge)
-[![License](https://img.shields.io/github/license/kidonng/ncuhome-2018-exam.svg?style=for-the-badge)](LICENSE)
+This repo contains my answers to NCUHOME's recruiting tasks.
 
-[Exam](exam)
-
-- Setup `pip install -r requirements.txt`
-- Run `flask run`
+- [2018](2018/README.md)
+- [2019](2019/README.md)
+- [2020](2020/README.md)

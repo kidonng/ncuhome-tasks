@@ -1,0 +1,198 @@
+// - Reset -
+
+body
+  margin 0
+
+input
+  outline 0
+
+button
+  border 0
+  padding 0
+
+body
+  font-size 12px
+  font-family Arial
+  text-align center
+
+// - Reset -
+
+nav
+  display flex
+  justify-content flex-end // 或使用 float right
+  font-size 13px
+  line-height 24px
+  margin-top 19px
+
+  > a
+    color #333
+    margin-right 20px
+
+    &:hover
+      color #00c
+
+    &:not(:nth-of-type(7)):not(:nth-of-type(8))
+      font-weight 700
+
+  .more
+    width 60px
+    height 24px // 23 + border-bottom 1
+    color white
+    background-color #38f
+    font-size 13px
+    border-bottom 1px solid #38f
+    margin-left 4px // padding-right 96 - width 60 - margin-right 12 - 左侧 <a> 的 margin-right 20
+    margin-right 12px // right 10 + margin-right 2
+
+  .list
+    width 85px
+    height 100% // 直接怼满
+    border-left 1px solid #e7e7e7
+    position absolute
+    background-color #f9f9f9
+    top 0
+    font-size 12px
+    transition opacity .1s
+    z-index 1
+
+    &.hide
+      display none
+
+    &.transparent
+      opacity 0
+
+    .title
+      color #333
+      height 43px
+      line-height 43px
+      padding-top 9px
+      border-bottom #f0f0f0 1px solid
+      font-size 13px
+
+    a
+      color #666
+
+      &:not(:last-of-type)
+        display block
+        height 76px
+        border-bottom #f0f0f0 1px solid
+        text-decoration none
+        overflow hidden
+
+        &:hover
+          text-decoration underline
+
+      &:last-of-type
+        display block
+        margin-top 11.5px // Magic number
+
+    img
+      width 36px
+      display block
+      margin 10px auto 1.8px // 1.8 是 magic number
+
+.logo
+  margin-top 13.5px // Magic number
+  width 270px
+  height 129px
+
+form
+  margin-top 22px // Magic number
+  margin-right auto
+  margin-left auto
+  position relative
+  width 641px // <input> width 526 + padding 7 * 2 + border-left 1 + <button> 100
+
+  input
+    width 526px
+    height 22px
+    padding 6px 7px
+    font-size 16px
+    line-height 22px
+    border 1px solid #b8b8b8
+    border-right 0
+    border-bottom-color #ccc
+
+    &:focus
+      border-color #4791ff transparent #4791ff #4791ff
+
+  input:hover
+  .soutu:hover + input
+    border-color #999 transparent #b3b3b3 #999
+
+  .soutu
+    position absolute
+    top 28% // Magic number
+    left 80% // Magic number
+    height 16px
+    width 18px
+    background-image url('https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/soutu/img/camera_new_5606e8f.png')
+    background-repeat no-repeat
+    cursor pointer
+
+    &:hover
+      background-position 0 -20px
+
+  button
+    width 100px
+    height 36px // 对不齐输入框 ¯\_(ツ)_/¯
+    color white
+    font-size 15px
+    letter-spacing 1px
+    background #3385ff
+    border-bottom 1px solid #2d78f4
+    cursor pointer
+
+    &:hover
+      background #317ef3
+      border-bottom 1px solid #2868c8
+      box-shadow 1px 1px 1px #ccc
+
+.qrcode
+  margin-top 102px // Magic number
+
+  img
+    padding 5px
+    border 1px solid #f3f3f3
+
+  .title
+    margin-top -4px // Magic number
+    color #333
+    font-size 16px
+    line-height 32px
+    letter-spacing 3px
+
+  .subtitle
+    color #999
+    font-size 14px
+    line-height 14px
+    font-weight 300
+
+footer
+  margin-top 37px // Magic number
+  line-height 22px
+
+  &
+  & a
+    color #999
+
+  .about a:not(:first-child)
+    margin-left 25px
+
+  .info a:last-of-type
+    margin-left 19px
+
+  i
+    width 14px
+    height 17px
+    display inline-block
+    background-image url('https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/global/img/icons_441e82f.png')
+    background-repeat no-repeat
+    position relative
+    top 3px
+
+    &.icp
+      background-position -600px -96px
+
+    &.beian
+      background-position -623px -96px

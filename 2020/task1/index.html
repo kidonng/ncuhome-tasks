@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+  <head>
+    <meta charset="utf-8" />
+    <title>云家园</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha2/dist/css/bootstrap.min.css"
+    />
+    <style>
+      html {
+        height: 100%;
+      }
+
+      body {
+        background-color: var(--bs-gray);
+      }
+
+      @media (min-width: 768px) {
+        body {
+          background-image: url('https://pass-y.ncuos.com/bg.jpg');
+          background-size: cover;
+          background-position-x: 50%;
+          background-attachment: fixed;
+        }
+      }
+
+      .container {
+        max-width: 500px;
+      }
+
+      a:not(.btn):hover {
+        text-decoration: underline;
+      }
+
+      a,
+      a.no-underline:hover {
+        text-decoration: none;
+      }
+
+      .btn-close {
+        width: 0.75rem;
+        height: 0.75rem;
+        padding: 0.75rem !important;
+        margin: 0.5rem;
+      }
+
+      /* 隐藏微调按钮 */
+      input[type='number']::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+      }
+
+      .card {
+        border-radius: 0.5rem;
+      }
+
+      .form-control {
+        padding-left: 2rem;
+      }
+
+      .form-label::before {
+        position: absolute;
+        transform: translate(0.5rem, 2.375rem);
+      }
+
+      .form-label[for='username']::before {
+        content: '👤';
+      }
+
+      .form-label[for='password']::before {
+        content: '🔒';
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="card mt-5 mx-3 px-4">
+        <div class="mx-auto mt-4">
+          <span class="h3 text-primary font-weight-light">☁ 云家园</span>
+          <span class="mx-1">信息服务平台</span>
+          <a
+            class="btn btn-success btn-sm align-bottom"
+            href="https://shang.qq.com/wpa/qunwpa?idkey=1ffcd88386a31108288aa8ef1b3879522672818d153e00e6f492d13ebf13efae"
+          >
+            帮助
+          </a>
+        </div>
+        <div class="mt-2">
+          <label class="form-label" for="username">账号</label>
+          <input
+            class="form-control"
+            id="username"
+            type="number"
+            placeholder="请输入学号/工资号"
+          />
+        </div>
+        <div class="mt-2">
+          <label class="form-label" for="password">密码</label>
+          <input
+            class="form-control"
+            id="password"
+            type="password"
+            placeholder="密码"
+          />
+        </div>
+        <div class="mt-3">
+          <input
+            class="form-check-input"
+            type="checkbox"
+            id="autologin"
+            checked
+          />
+          <label class="form-check-label" for="autologin">下次自动登录</label>
+          <a
+            class="float-right link-primary"
+            href="https://ncuos.com/loginBox/regainPassword"
+          >
+            忘记密码?
+          </a>
+        </div>
+        <button type="button" class="btn btn-primary btn-block mt-3">
+          登录
+        </button>
+        <a
+          class="btn btn-primary btn-block mt-3"
+          href="https://ncuos.com/loginBox/login#reg"
+        >
+          <strong>新生注册</strong>
+        </a>
+        <div class="alert alert-warning alert-dismissible mt-3">
+          <button
+            type="button"
+            class="btn-close"
+            aria-label="Close"
+            data-dismiss="alert"
+          ></button>
+          <div>
+            <strong>新生(本科)自助报到系统</strong
+            >请关注<strong>南昌大学家园网</strong>微信公众号，了解更多具体新生报道系统流程
+          </div>
+          <div>
+            家园工作室 QQ：
+            <a
+              href="https://qm.qq.com/cgi-bin/qm/qr?k=OtyR5Xib0OPbuAtjZtXeyVc5-a6y7zQU"
+            >
+              2459289916
+            </a>
+          </div>
+          <div>
+            2020 南昌大学本科迎新群：
+            <a
+              class="no-underline"
+              href="https://qm.qq.com/cgi-bin/qm/qr?k=pCH_WujTSR0gER5lAakD1mbywk5EXK1X&jump_from=webapi"
+            >
+              <img
+                src="https://pub.idqqimg.com/wpa/images/group.png"
+                alt="加入 QQ 群"
+              />
+            </a>
+          </div>
+          <div>校园 APP：<a href="https://incu.ncuos.com/">南大家园</a></div>
+        </div>
+        <div class="border-left border-4 pl-3 mt-1">
+          <div class="row">
+            <div class="col-6">
+              <a
+                class="btn btn-danger btn-block"
+                href="https://itunes.apple.com/us/app/%E5%8D%97%E5%A4%A7%E5%AE%B6%E5%9B%AD/id1209726561?mt=8"
+              >
+                <small>🍎 iOS 版</small>
+              </a>
+            </div>
+            <div class="col-6">
+              <a
+                class="btn btn-success btn-block"
+                href="https://incu-download.ncuos.com/iNCU_latest.apk"
+              >
+                <small>🤖 Android 版</small>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="mt-3 mb-4">
+          <small class="text-muted">下载南大家园手机客户端 👆</small>
+        </div>
+      </div>
+      <div class="d-md-none text-center py-2">
+        <span class="text-white">© Powered By</span>
+        <a class="text-white" href="https://team.ncuos.com/"> 家园工作室 </a>
+      </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-alpha2/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
