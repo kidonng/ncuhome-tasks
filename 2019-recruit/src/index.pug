@@ -1,0 +1,66 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title 百度一下，你就知道
+    link(rel="stylesheet" href="style.styl")
+  body
+    nav
+      a(href="http://news.baidu.com/") 新闻
+      a(href="https://www.hao123.com/") hao123
+      a(href="http://map.baidu.com/") 地图
+      a(href="http://v.baidu.com/") 视频
+      a(href="http://tieba.baidu.com/") 贴吧
+      a(href="http://xueshu.baidu.com/") 学术
+      a(href="https://passport.baidu.com/v2/?login&tpl=mn&u=http%3A%2F%2Fwww.baidu.com%2F") 登录
+      a(href="http://www.baidu.com/gaoji/preferences.html") 设置
+      button.more 更多产品
+      .list.hide.transparent
+        .title 更多产品
+        a(href="http://www.nuomi.com/?cid=002540")
+          img(src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/nuomi_7f5cd35.png" alt="糯米")
+          | 糯米
+        a(href="http://music.taihe.com")
+          img(src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/qqjt_9809ca8.png" alt="音乐")
+          | 音乐
+        a(href="http://image.baidu.com")
+          img(src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/image_55b5909.png" alt="图片")
+          | 图片
+        a(href="http://zhidao.baidu.com")
+          img(src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/zhidao_cbf2aff.png" alt="知道")
+          | 知道
+        a(href="http://wenku.baidu.com")
+          img(src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/wenku_aaf198d.png" alt="文库")
+          | 文库
+        a(href="http://top.baidu.com")
+          img(src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/logos/fengyunbang_1986a40.png" alt="风云榜")
+          | 风云榜
+        a(href="https://www.baidu.com/more/") 全部产品>>
+    a(href="https://www.baidu.com/s?wd=%e6%96%b0%e4%b8%ad%e5%9b%bd%e6%88%90%e7%ab%8b70%e5%91%a8%e5%b9%b4&sa=ire_dl_gh_logo&rsv_dl=igh_logo_pcs")
+      img.logo(src="https://www.baidu.com/img/dong_a16028f60eed614e4fa191786f32f417.gif" alt="Baidu百度 - 新中国成立70周年")
+    form(action="https://www.baidu.com/s")
+      i.soutu
+      input(name="wd" autofocus)
+      button 百度一下
+    .qrcode
+      img(src="https://ss1.bdstatic.com/5eN1bjq8AAUYm2zgoY3K/r/www/cache/static/protocol/https/home/img/qrcode/zbios_09b6296.png" alt="扫描二维码下载百度APP")
+      .title 下载百度APP
+      .subtitle 有事搜一搜 &nbsp;没事看一看
+    footer
+      .about
+        a(href="https://www.baidu.com/cache/sethelp/help.html") 把百度设为主页
+        a(href="http://home.baidu.com/") 关于百度
+        a(href="http://ir.baidu.com/") About &nbsp;Baidu
+        a(href="http://e.baidu.com/?refer=888") 百度推广
+      .info
+        | ©2019 Baidu&nbsp;
+        a(href="http://www.baidu.com/duty/") 使用百度前必读
+        | &nbsp;
+        a(href="http://jianyi.baidu.com/") 意见反馈
+        | &nbsp;京ICP证030173号&nbsp;
+        i.icp
+        | &nbsp;
+        a(href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=11000002000001") 京公网安备11000002000001号
+        | &nbsp;
+        i.beian
+    script(src="script.ts")

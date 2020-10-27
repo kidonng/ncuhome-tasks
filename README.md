@@ -1,6 +1,3 @@
-# NCUHome 2018 Exam
+# NCUHOME Tasks
 
-Answer to [NCUHome 2018 Exam](https://github.com/lenconda/2018exam) (Updated).
-
-- Setup `pip install flask bs4`
-- Run `flask run`
+My answers to NCUHOME's tasks.
