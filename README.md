@@ -1,3 +1,3 @@
 # NCUHOME Tasks
 
-My answers to NCUHOME's tasks.
+My answers to NCUHOME's tasks & questions.
